@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Modo fútbol App - La emoción se juega en grupo</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Lexend:wght@300..700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#36343a",
+                        "on-surface-variant": "#8b99a8",
+                        "secondary-fixed-dim": "#cdc0e9",
+                        "on-primary-fixed-variant": "#4f378a",
+                        "surface-bright": "#3b383e",
+                        "primary": "#00d4aa",
+                        "error": "#ffb4ab",
+                        "surface-container": "#1a2332",
+                        "on-tertiary": "#3e2e00",
+                        "inverse-primary": "#6750a4",
+                        "surface-container-high": "#2b292f",
+                        "on-secondary-fixed": "#1f1635",
+                        "surface-variant": "#1a2332",
+                        "on-tertiary-fixed-variant": "#594400",
+                        "secondary-fixed": "#e9ddff",
+                        "surface-container-lowest": "#0f1419",
+                        "on-tertiary-fixed": "#241a00",
+                        "primary-fixed": "#e9ddff",
+                        "outline": "#494551",
+                        "primary-fixed-dim": "#cfbcff",
+                        "surface-tint": "#00d4aa",
+                        "surface": "#0f1419",
+                        "on-primary-fixed": "#22005d",
+                        "tertiary": "#e7c365",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed": "#ffdf93",
+                        "on-background": "#e8ecf1",
+                        "error-container": "#93000a",
+                        "on-secondary-container": "#bfb2da",
+                        "tertiary-container": "#c9a74d",
+                        "inverse-surface": "#e8ecf1",
+                        "on-error": "#690005",
+                        "surface-dim": "#0f1419",
+                        "surface-container-low": "#1a2332",
+                        "on-tertiary-container": "#503d00",
+                        "inverse-on-surface": "#322f35",
+                        "on-secondary-fixed-variant": "#4b4263",
+                        "on-secondary": "#342b4b",
+                        "primary-container": "#00d4aa",
+                        "on-primary": "#0f1419",
+                        "background": "#0f1419",
+                        "secondary": "#cdc0e9",
+                        "on-primary-container": "#0f1419",
+                        "tertiary-fixed-dim": "#e7c365",
+                        "on-surface": "#e8ecf1",
+                        "outline-variant": "#494551",
+                        "secondary-container": "#4d4465"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "gutter": "16px",
+                        "margin": "20px",
+                        "xs": "4px",
+                        "xl": "40px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Space Grotesk"],
+                        "label-bold": ["Space Grotesk"],
+                        "display-xl": ["Space Grotesk"],
+                        "headline-lg": ["Space Grotesk"],
+                        "label-sm": ["Space Grotesk"],
+                        "body-lg": ["Space Grotesk"],
+                        "body-md": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "label-bold": ["14px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "display-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0f1419;
+            color: #e8ecf1;
+        }
+
+        .glass-card {
+            background: rgba(26, 35, 50, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .neon-border:hover {
+            border-color: #00d4aa;
+            box-shadow: 0 0 15px rgba(0, 212, 170, 0.2);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="font-body-md text-on-surface selection:bg-surface-tint selection:text-on-primary">
+    <!-- TopAppBar -->
+    <header class="bg-[#0f1419]/80 backdrop-blur-xl fixed top-0 w-full z-50 rounded-none border-b border-white/5">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <div class="flex items-center gap-2">
+                <span
+                    class="text-2xl font-black text-[#00d4aa] italic uppercase tracking-tighter font-['Space_Grotesk']">Modo
+                    fútbol App</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a class="text-[#00d4aa] border-b-2 border-[#00d4aa] pb-1 font-['Space_Grotesk'] font-bold tracking-tight"
+                    href="#features">Features</a>
+                <a class="text-[#8b99a8] font-medium hover:text-[#00d4aa] transition-all duration-200 font-['Space_Grotesk'] font-bold tracking-tight"
+                    href="#b2b">B2B</a>
+                <a class="text-[#8b99a8] font-medium hover:text-[#00d4aa] transition-all duration-200 font-['Space_Grotesk'] font-bold tracking-tight"
+                    href="#contact">Contact</a>
+            </nav>
+            <button
+                class="active:scale-95 transition-transform bg-[#00d4aa] text-[#0f1419] px-6 py-2 font-['Space_Grotesk'] font-bold rounded-lg hover:brightness-110"
+                onclick="location.href='#download'">
+    Comenzar gratis
+</button>
+        </div>
+    </header>
+    <main class="pt-24 overflow-x-hidden">
+        <!-- Hero Section -->
+        <section
+            class="relative px-6 py-12 lg:py-24 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="z-10">
+                <h1 class="font-display-xl text-display-xl mb-6 text-on-surface">
+                    La emoción del fútbol <span class="text-[#00d4aa] italic">se juega en grupo.</span>
+                </h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg">
+                    Viví el próximo mundial con Modo Fútbol App, la aplicación de pronósticos más ágil y divertida para
+                    competir con
+                    amigos.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button
+                        class="bg-[#00d4aa] text-[#0f1419] font-label-bold text-label-bold py-4 px-8 rounded-xl active:scale-95 transition-transform hover:brightness-110"
+                        onclick="location.href='#download'">
+                        Descargala Gratis
+                    </button>
+                    <button
+                        class="border border-outline text-on-surface font-label-bold text-label-bold py-4 px-8 rounded-xl hover:bg-surface-container transition-colors"
+                        onclick="location.href='#download'">
+                        Empezar a jugar
+                    </button>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="absolute -z-10 inset-0 bg-[#00d4aa]/10 blur-[120px] rounded-full"></div>
+                <div
+                    class="glass-card rounded-[3rem] p-4 rotate-3 border-2 border-white/5 overflow-hidden max-w-md mx-auto">
+                    <img alt="Smartphone Mockup" class="rounded-[2.5rem] w-full shadow-2xl shadow-[#00d4aa]/10"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1Vs55msIkAxHJxoZo105Qh1nsuZ7zEAKxBbKlYqdsTvjGdxJqvNDA_M3wzMhq8dkHREAeXTzRskbylAJCSX_3mgpPrDh9yqIFoZcBp2IdgwezqiXwfnA3jgwV4noDvhh1l1oZAVaa1ANv5W9EQhP8hkwx4oduoBY1j7G-KLQKvDJexyEDCjIQlH7CU_aX9jFY0WSKHhs4hynae6gJ7hs-Vco_RC5WNRhiYKs_MB7FJOrbGhNKmw5_zaq9Oru2xQM_qk7r8l0V7mA" />
+                </div>
+            </div>
+        </section>
+        <!-- Features Section -->
+        <section class="px-6 py-xl max-w-7xl mx-auto" id="features">
+            <div class="text-center mb-16">
+                <h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Características Principales</h2>
+                <div class="h-1 w-24 bg-[#00d4aa] mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+                <!-- Feature 1 -->
+                <div class="glass-card p-lg rounded-xl neon-border transition-all duration-300">
+                    <div class="bg-[#00d4aa]/10 w-12 h-12 flex items-center justify-center rounded-lg mb-md">
+                        <span class="material-symbols-outlined text-[#00d4aa]">groups</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Tu grupo, tus reglas</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">
+                        Creá grupos públicos para medirte con la comunidad o privados para jugar solo con tus amigos.
+                    </p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="glass-card p-lg rounded-xl neon-border transition-all duration-300">
+                    <div class="bg-[#00d4aa]/10 w-12 h-12 flex items-center justify-center rounded-lg mb-md">
+                        <span class="material-symbols-outlined text-[#00d4aa]">layers</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Multigrupo</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">
+                        No elijas entre el grupo del trabajo y el de tu familia. Participá en múltiples ligas
+                        simultáneamente.
+                    </p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="glass-card p-lg rounded-xl neon-border transition-all duration-300">
+                    <div class="bg-[#00d4aa]/10 w-12 h-12 flex items-center justify-center rounded-lg mb-md">
+                        <span class="material-symbols-outlined text-[#00d4aa]">monetization_on</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Sin costos ocultos</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">
+                        Disfrutá de la experiencia completa de forma 100% gratuita. Tu única preocupación es acertar.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- B2B Section -->
+        <section class="px-6 py-xl" id="b2b">
+            <div
+                class="max-w-7xl mx-auto glass-card rounded-3xl p-lg lg:p-xl overflow-hidden relative border border-white/5">
+                <div class="absolute top-0 right-0 w-1/3 h-full bg-[#00d4aa]/5 blur-3xl rounded-full translate-x-1/2">
+                </div>
+                <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-lg items-center">
+                    <div>
+                        <h2 class="font-headline-lg text-headline-lg text-on-surface mb-md">¿Querés llevar la pasión a
+                            tu empresa o marca?</h2>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant mb-lg max-w-xl">
+                            Potenciá el clima laboral o fidelizá a tus clientes con una versión personalizada de Modo
+                            Fútbol. Adaptamos la estética a las necesidades de tu organización. Sin anuncios y con tablero de noticias privado para tu comunidad.
+                        </p>
+                        <a class="inline-block bg-[#00d4aa] text-[#0f1419] font-label-bold text-label-bold py-md px-lg rounded-xl active:scale-95 transition-transform hover:brightness-110"
+                            href="mailto:modo.futbol.app@gmail.com?subject=Consulta por versión corporativa - Modo Fútbol App">
+                            Contactanos por Email
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-2 gap-sm">
+                        <img alt="Corporate Environment" class="rounded-xl aspect-video object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1-ViSOIxuiZtIBruyd4m2FAG6qmD3djindQZqX_T5c1WCLViMl0y-vvyvvu05A4m34SarGDJuC7g47kY5RuHZX5-HkEZzSO-2RigqM1xpRQKCA5O7A4se94kLHCxDC7yyFM4JVUgOSsZ-TXcF3PQljhZt3JK20WMfOhdlNNNIGuotMJxSSTBPcmvMiwZnmDA2OhWnFCwDvDFqNpwuP7uJdeSRj1HgQYfPntyYGGOyLmttcQWvsbSKyAeEj-IGi1LEJ5jHuq_ZvZA" />
+                        <img alt="Professional Team" class="rounded-xl aspect-square object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCy-eP6rHEq4nJNNVSevu9Brnt9uwRolmwAUygspQOvZtvqZjVIncEKLVKgX3b4m-quopDnnWhF-gdnZJIPKkwtuvW06__roj9HGs2f9LWQsnyrxxAg4uGdvSlS_pSodsJbSSffm9gp5a1UBQY5MwBy_nltaqqU3cz3OmByaJXAaGOJ8nOyz_bVCGWiVtdh4JVTCvtdTftmQXCwqy0MwKde691HG1Tw_XNE9Nv04shki1G4yS5UfngvyEDZ7LsZEf6fT-LbaFTD-g" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Social Proof -->
+        <section class="px-6 py-xl max-w-7xl mx-auto overflow-hidden">
+            <h2 class="font-headline-lg text-headline-lg text-on-surface mb-xl text-center">Lo que dicen nuestros
+                jugadores</h2>
+            <div class="flex gap-md snap-x overflow-x-auto pb-lg no-scrollbar">
+                <!-- Review 1 -->
+                <div class="flex-none w-[300px] md:w-[400px] glass-card p-lg rounded-2xl snap-center">
+                    <div class="flex gap-1 mb-md">
+                        <span class="material-symbols-outlined text-[#00d4aa]"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-[#00d4aa]"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-[#00d4aa]"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-[#00d4aa]"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-[#00d4aa]"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="font-body-md text-body-md italic text-on-surface mb-md">"La app es súper rápida y fácil de
+                        usar. Competir con el grupo del laburo nunca fue tan divertido."</p>
+                    <div class="flex items-center gap-sm">
+                        <div class="w-10 h-10 rounded-full bg-surface-container-highest"></div>
+                        <span class="font-label-bold text-label-bold text-[#00d4aa]">Matias Q.</span>
+                    </div>
+                </div>
+                <!-- Review 2 -->
+                <div class="flex-none w-[300px] md:w-[400px] glass-card p-lg rounded-2xl snap-center">
+                    <div class="flex gap-1 mb-md">
+                        <span class="material-symbols-outlined text-[#00d4aa]"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-[#00d4aa]"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-[#00d4aa]"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-[#00d4aa]"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-[#00d4aa]"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="font-body-md text-body-md italic text-on-surface mb-md">"Me encanta que no tenga mil
+                        banners de publicidad. Es limpia, directa y los rankings se actualizan al toque."</p>
+                    <div class="flex items-center gap-sm">
+                        <div class="w-10 h-10 rounded-full bg-surface-container-highest"></div>
+                        <span class="font-label-bold text-label-bold text-[#00d4aa]">Luciano T.</span>
+                    </div>
+                </div>
+                <!-- Review 3 -->
+                <div class="flex-none w-[300px] md:w-[400px] glass-card p-lg rounded-2xl snap-center">
+                    <div class="flex gap-1 mb-md">
+                        <span class="material-symbols-outlined text-[#00d4aa]"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-[#00d4aa]"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-[#00d4aa]"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-[#00d4aa]"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-[#00d4aa]"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="font-body-md text-body-md italic text-on-surface mb-md">"El modo multigrupo es clave.
+                        Estoy en el de mis amigos de siempre y en el de la familia al mismo tiempo."</p>
+                    <div class="flex items-center gap-sm">
+                        <div class="w-10 h-10 rounded-full bg-surface-container-highest"></div>
+                        <span class="font-label-bold text-label-bold text-[#00d4aa]">Karina F.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CTAs / Mobile Store Badges -->
+        <section class="px-6 py-xl max-w-7xl mx-auto text-center" id="download">
+            <h2 class="font-headline-lg text-headline-lg mb-lg">¿Listo para el próximo partido?</h2>
+            <div class="flex flex-wrap justify-center gap-md">
+                <div
+                    class="bg-black border border-white/20 p-2 px-6 rounded-xl flex items-center gap-4 cursor-pointer hover:border-[#00d4aa] transition-all w-fit">
+                    <!-- Google Play SVG Logo -->
+                    <svg viewBox="0 0 512 512" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M325.3 234.3L104.6 13l280.8 161.2-59.9 60.1z" fill="#ff3333" />
+                        <path d="M27.5 24c-1.7 5.8-2.5 12.1-2.5 18.7v426.6c0 6.6.8 12.9 2.5 18.7L254 256 27.5 24z"
+                            fill="#48ff48" />
+                        <path d="M325.3 277.7l59.9 60.1L104.6 499l220.7-221.3z" fill="#ff3333" />
+                        <path d="M481.4 223.4l-92.2-53-63.8 63.8 63.8 63.8 92.2-53c20.3-11.7 20.3-30.8 0-42.4z"
+                            fill="#ffdb00" />
+                    </svg>
+
+                    <div class="flex flex-col leading-tight">
+                        <span class="text-[10px] uppercase font-semibold opacity-80 text-white">Descargá en</span>
+                        <span class="font-bold text-xl text-white">Google Play</span>
+                    </div>
+                </div>
+                <div
+                    class="bg-black border border-white/20 p-4 px-8 rounded-2xl flex items-center gap-md cursor-pointer hover:border-[#00d4aa] transition-all">
+                    <span class="material-symbols-outlined text-3xl">ios</span>
+                    <div class="text-left">
+                        <div class="text-[10px] uppercase opacity-60">Descargá en</div>
+                        <div class="font-bold text-lg">App Store</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-[#0f1419] w-full rounded-none border-t border-white/5 mt-xl">
+        <div class="max-w-7xl mx-auto px-8 py-12">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-8 mb-12">
+                <div class="flex flex-col gap-4">
+                    <span
+                        class="text-2xl font-black text-[#00d4aa] italic uppercase tracking-tighter font-['Space_Grotesk']">Modo
+                        fútbol</span>
+                    <p class="text-[#8b99a8] font-['Space_Grotesk'] text-sm max-w-xs">La app de pronósticos diseñada
+                        para los que viven el fútbol al límite. Competí, ganá y demostrá quién sabe más.</p>
+                    <div class="flex gap-4">
+                        <a class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-[#e8ecf1] hover:text-[#00d4aa] hover:border-[#00d4aa] transition-all"
+                            href="https://instagram.com/modo.futbol.app" target="_blank">
+                            <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.335 3.608 1.31.975.975 1.248 2.242 1.31 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.335 2.633-1.31 3.608-.975.975-2.242 1.248-3.608 1.31-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.335-3.608-1.31-.975-.975-1.248-2.242-1.31-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.335-2.633 1.31-3.608.975-.975 2.242-1.248 3.608-1.31 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z">
+                                </path>
+                            </svg>
+                        </a>
+
+
+                        <!-- Botón de Email -->
+                        <a class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-[#e8ecf1] hover:text-[#00d4aa] hover:border-[#00d4aa] transition-all"
+                            href="mailto:modo.futbol.app@gmail.com?subject=Consulta%20por%20Versi%C3%B3n%20Corporativa&body=Hola%20equipo%20de%20Modo%20F%C3%BAtbol%2C%0A%0AMi%20nombre%20es%20%5BNombre%5D%20y%20les%20escribo%20en%20representaci%C3%B3n%20de%20%5BEmpresa%5D.%20Nos%20gustar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20las%20opciones%20de%20personalizaci%C3%B3n%20para%20grupos%20empresariales.%0A%0ASaludos."
+                            target="_blank">
+                            <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+                                <path
+                                    d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l1.324 1.072c.42.34.92.51 1.423.51.503 0 1.003-.17 1.423-.51l1.324-1.072 4.623 5.753h-14.74l4.623-5.753zm7.201-1.259l4.623-3.746v9.458l-4.623-5.712z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-8">
+                    <div class="flex flex-col gap-4">
+                        <h4 class="font-bold text-[#e8ecf1]">Empresas</h4>
+                        <a class="text-[#8b99a8] hover:text-[#00d4aa] transition-colors text-sm" href="#b2b">B2B
+                            Solutions</a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-white/5">
+                <p class="text-[#8b99a8] font-['Space_Grotesk'] text-sm tracking-wide">© 2026 Modo fútbol App.
+                    Engineered for the elite.</p>
+                <span class="text-[#8b99a8] text-sm font-['Space_Grotesk']">Argentina 🇦🇷</span>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
