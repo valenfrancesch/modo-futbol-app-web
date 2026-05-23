@@ -5,6 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <title>Modo fútbol App - La emoción se juega en grupo</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
@@ -142,9 +143,11 @@
     <header class="bg-[#0f1419]/80 backdrop-blur-xl fixed top-0 w-full z-50 rounded-none border-b border-white/5">
         <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
             <div class="flex items-center gap-2">
+                <img src="img/mfa.png" alt="" class="h-9 w-9 rounded-lg object-contain shrink-0"
+                    width="36" height="36" />
                 <span
                     class="text-2xl font-black text-[#00d4aa] italic uppercase tracking-tighter font-['Space_Grotesk']">Modo
-                    fútbol App</span>
+                    Futbol App</span>
             </div>
             <nav class="hidden md:flex items-center gap-8">
                 <a class="text-[#00d4aa] border-b-2 border-[#00d4aa] pb-1 font-['Space_Grotesk'] font-bold tracking-tight"
@@ -152,7 +155,7 @@
                 <a class="text-[#8b99a8] font-medium hover:text-[#00d4aa] transition-all duration-200 font-['Space_Grotesk'] font-bold tracking-tight"
                     href="#b2b">B2B</a>
                 <a class="text-[#8b99a8] font-medium hover:text-[#00d4aa] transition-all duration-200 font-['Space_Grotesk'] font-bold tracking-tight"
-                    href="#contact">Contact</a>
+                    href="docs/support-es.html">Contacto</a>
             </nav>
             <button
                 class="active:scale-95 transition-transform bg-[#00d4aa] text-[#0f1419] px-6 py-2 font-['Space_Grotesk'] font-bold rounded-lg hover:brightness-110"
@@ -337,32 +340,15 @@
         <!-- CTAs / Mobile Store Badges -->
         <section class="px-6 py-xl max-w-7xl mx-auto text-center" id="download">
             <h2 class="font-headline-lg text-headline-lg mb-lg">¿Listo para el próximo partido?</h2>
-            <div class="flex flex-wrap justify-center gap-md">
-                <div
-                    class="bg-black border border-white/20 p-2 px-6 rounded-xl flex items-center gap-4 cursor-pointer hover:border-[#00d4aa] transition-all w-fit">
-                    <!-- Google Play SVG Logo -->
-                    <svg viewBox="0 0 512 512" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M325.3 234.3L104.6 13l280.8 161.2-59.9 60.1z" fill="#ff3333" />
-                        <path d="M27.5 24c-1.7 5.8-2.5 12.1-2.5 18.7v426.6c0 6.6.8 12.9 2.5 18.7L254 256 27.5 24z"
-                            fill="#48ff48" />
-                        <path d="M325.3 277.7l59.9 60.1L104.6 499l220.7-221.3z" fill="#ff3333" />
-                        <path d="M481.4 223.4l-92.2-53-63.8 63.8 63.8 63.8 92.2-53c20.3-11.7 20.3-30.8 0-42.4z"
-                            fill="#ffdb00" />
-                    </svg>
-
-                    <div class="flex flex-col leading-tight">
-                        <span class="text-[10px] uppercase font-semibold opacity-80 text-white">Descargá en</span>
-                        <span class="font-bold text-xl text-white">Google Play</span>
-                    </div>
-                </div>
-                <div
-                    class="bg-black border border-white/20 p-4 px-8 rounded-2xl flex items-center gap-md cursor-pointer hover:border-[#00d4aa] transition-all">
-                    <span class="material-symbols-outlined text-3xl">ios</span>
-                    <div class="text-left">
-                        <div class="text-[10px] uppercase opacity-60">Descargá en</div>
-                        <div class="font-bold text-lg">App Store</div>
-                    </div>
-                </div>
+            <div class="flex flex-wrap justify-center items-center gap-md">
+                <a href="#" class="inline-block transition-opacity hover:opacity-90">
+                    <img src="img/GetItOnGooglePlay_Badge_Web_color_Spanish-LATAM.svg"
+                        alt="Disponible en Google Play" class="h-12 w-auto" />
+                </a>
+                <a href="#" class="inline-block transition-opacity hover:opacity-90">
+                    <img src="img/Download_on_the_App_Store_Badge_ESMX_RGB_blk_100217.svg"
+                        alt="Descargar en el App Store" class="h-12 w-auto" />
+                </a>
             </div>
         </section>
     </main>
@@ -402,15 +388,26 @@
                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-8">
                     <div class="flex flex-col gap-4">
                         <h4 class="font-bold text-[#e8ecf1]">Empresas</h4>
-                        <a class="text-[#8b99a8] hover:text-[#00d4aa] transition-colors text-sm" href="#b2b">B2B
+                        <a class="text-[#8b99a8] hover:text-[#00d4aa] transition-colors text-sm"
+                            href="mailto:modo.futbol.app@gmail.com?subject=Consulta%20por%20Versi%C3%B3n%20Corporativa&body=Hola%20equipo%20de%20Modo%20F%C3%BAtbol%2C%0A%0AMi%20nombre%20es%20%5BNombre%5D%20y%20les%20escribo%20en%20representaci%C3%B3n%20de%20%5BEmpresa%5D.%20Nos%20gustar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20las%20opciones%20de%20personalizaci%C3%B3n%20para%20grupos%20empresariales.%0A%0ASaludos.">B2B
                             Solutions</a>
                     </div>
                 </div>
             </div>
-            <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-white/5">
-                <p class="text-[#8b99a8] font-['Space_Grotesk'] text-sm tracking-wide">© 2026 Modo fútbol App.
-                    Engineered for the elite.</p>
-                <span class="text-[#8b99a8] text-sm font-['Space_Grotesk']">Argentina 🇦🇷</span>
+            <div class="pt-8 border-t border-white/5">
+                <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-4 text-sm font-['Space_Grotesk']">
+                    <a class="text-[#8b99a8] hover:text-[#00d4aa] transition-colors"
+                        href="docs/termsandconditions-es.html">Términos y condiciones</a>
+                    <a class="text-[#8b99a8] hover:text-[#00d4aa] transition-colors" href="docs/privacy-es.html">Política
+                        de privacidad</a>
+                    <a class="text-[#8b99a8] hover:text-[#00d4aa] transition-colors" href="docs/support-es.html">Ayuda y
+                        soporte</a>
+                </nav>
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-[#8b99a8] font-['Space_Grotesk'] text-sm tracking-wide">© 2026 Modo Futbol App.
+                        Engineered for the elite.</p>
+                    <span class="text-[#8b99a8] text-sm font-['Space_Grotesk']">Argentina 🇦🇷</span>
+                </div>
             </div>
         </div>
     </footer>
