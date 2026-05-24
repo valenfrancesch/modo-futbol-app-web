@@ -26,7 +26,18 @@
 
   select.setAttribute("aria-label", ARIA_LABELS[currentLang] || "Language");
 
-  LANGS.forEach(function (lang) {
+  var langFilter = select.getAttribute("data-langs");
+  var langs = LANGS;
+  if (langFilter) {
+    var allowed = langFilter.split(",").map(function (s) {
+      return s.trim();
+    });
+    langs = LANGS.filter(function (lang) {
+      return allowed.indexOf(lang.code) >= 0;
+    });
+  }
+
+  langs.forEach(function (lang) {
     var option = document.createElement("option");
     option.value = pageType + "-" + lang.code + ".html";
     option.textContent = lang.label;
