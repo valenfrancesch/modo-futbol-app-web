@@ -135,6 +135,71 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+
+        .google-play-btn {
+            position: relative;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            padding: 0;
+        }
+
+        .google-play-btn .google-play-badge {
+            display: block;
+            transition: opacity 0.45s ease;
+        }
+
+        .google-play-btn .google-play-soon {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.7rem;
+            letter-spacing: 0.14em;
+            color: #00d4aa;
+            white-space: nowrap;
+        }
+
+        .google-play-btn.is-soon .google-play-badge {
+            opacity: 0;
+        }
+
+        .google-play-btn.is-soon .google-play-soon {
+            animation: google-play-soon-fade 3.8s ease-in-out forwards;
+        }
+
+        @keyframes google-play-soon-fade {
+            0% {
+                opacity: 0;
+            }
+
+            14% {
+                opacity: 1;
+            }
+
+            72% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .google-play-btn.is-soon .google-play-soon {
+                animation-duration: 0.01ms;
+            }
+
+            .google-play-btn .google-play-badge {
+                transition-duration: 0.01ms;
+            }
+        }
     </style>
 </head>
 
@@ -195,7 +260,7 @@
                 <div
                     class="glass-card rounded-[3rem] p-4 rotate-3 border-2 border-white/5 overflow-hidden max-w-md mx-auto">
                     <img alt="Smartphone Mockup" class="rounded-[2.5rem] w-full shadow-2xl shadow-[#00d4aa]/10"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1Vs55msIkAxHJxoZo105Qh1nsuZ7zEAKxBbKlYqdsTvjGdxJqvNDA_M3wzMhq8dkHREAeXTzRskbylAJCSX_3mgpPrDh9yqIFoZcBp2IdgwezqiXwfnA3jgwV4noDvhh1l1oZAVaa1ANv5W9EQhP8hkwx4oduoBY1j7G-KLQKvDJexyEDCjIQlH7CU_aX9jFY0WSKHhs4hynae6gJ7hs-Vco_RC5WNRhiYKs_MB7FJOrbGhNKmw5_zaq9Oru2xQM_qk7r8l0V7mA" />
+                        src="img/4.png" />
                 </div>
             </div>
         </section>
@@ -237,6 +302,12 @@
                         Disfrutá de la experiencia completa de forma 100% gratuita. Tu única preocupación es acertar.
                     </p>
                 </div>
+            </div>
+            <div class="text-center mt-xl">
+                <a class="inline-block border border-outline text-on-surface font-label-bold text-label-bold py-4 px-8 rounded-xl hover:bg-surface-container hover:border-[#00d4aa] transition-all duration-200"
+                    href="features.html">
+                    Todas las características
+                </a>
             </div>
         </section>
         <!-- B2B Section -->
@@ -341,11 +412,18 @@
         <section class="px-6 py-xl max-w-7xl mx-auto text-center" id="download">
             <h2 class="font-headline-lg text-headline-lg mb-lg">¿Listo para el próximo partido?</h2>
             <div class="flex flex-wrap justify-center items-center gap-md">
-                <a href="#" class="inline-block transition-opacity hover:opacity-90">
-                    <img src="img/GetItOnGooglePlay_Badge_Web_color_Spanish-LATAM.svg"
+                <a href="https://mobile.modofutbol.app" target="_blank" class="inline-block transition-opacity hover:opacity-90">
+                    <img src="img/OpenWeb.svg"
                         alt="Disponible en Google Play" class="h-12 w-auto" />
                 </a>
-                <a href="#" class="inline-block transition-opacity hover:opacity-90">
+                <button type="button" id="google-play-btn"
+                    class="google-play-btn inline-block transition-opacity hover:opacity-90"
+                    aria-label="Disponible en Google Play">
+                    <img src="img/GetItOnGooglePlay_Badge_Web_color_Spanish-LATAM.svg" alt=""
+                        class="google-play-badge h-12 w-auto" />
+                    <span class="google-play-soon" aria-live="polite">EN BREVE...</span>
+                </button>
+                <a href="https://apps.apple.com/ar/app/modo-futbol-app/id6769594888" target="_blank" class="inline-block transition-opacity hover:opacity-90">
                     <img src="img/Download_on_the_App_Store_Badge_ESMX_RGB_blk_100217.svg"
                         alt="Descargar en el App Store" class="h-12 w-auto" />
                 </a>
@@ -412,6 +490,24 @@
             </div>
         </div>
     </footer>
+    <script>
+        (function () {
+            var btn = document.getElementById('google-play-btn');
+            if (!btn) return;
+
+            btn.addEventListener('click', function () {
+                if (btn.classList.contains('is-soon')) return;
+
+                btn.classList.add('is-soon');
+
+                var soon = btn.querySelector('.google-play-soon');
+                soon.addEventListener('animationend', function onEnd() {
+                    btn.classList.remove('is-soon');
+                    soon.removeEventListener('animationend', onEnd);
+                });
+            });
+        })();
+    </script>
 </body>
 
 </html>
