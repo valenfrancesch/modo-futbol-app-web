@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <title>Material Promocional — Modo fútbol App</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Space+Grotesk:wght@300..700&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#00d4aa",
+                        surface: "#0f1419",
+                        "on-surface": "#e8ecf1",
+                        "on-surface-variant": "#8b99a8",
+                        outline: "#494551",
+                        "surface-container": "#1a2332",
+                    },
+                    spacing: {
+                        lg: "24px",
+                        md: "16px",
+                        sm: "8px",
+                        xl: "40px",
+                    },
+                    fontSize: {
+                        "headline-lg": ["32px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "label-bold": ["14px", { lineHeight: "1.4", fontWeight: "600" }],
+                        "label-sm": ["12px", { lineHeight: "1.4", fontWeight: "500" }],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0f1419;
+            color: #e8ecf1;
+        }
+
+        .glass-card {
+            background: rgba(26, 35, 50, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .resource-preview {
+            width: 5rem;
+            height: 5rem;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 212, 170, 0.06);
+            border-radius: 0.75rem;
+            overflow: hidden;
+        }
+
+        .resource-preview img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .resource-type {
+            display: inline-block;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #00d4aa;
+            background: rgba(0, 212, 170, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.25rem;
+        }
+
+        .resource-soon {
+            opacity: 0.55;
+        }
+    </style>
+</head>
+
+<body class="font-['Space_Grotesk'] text-on-surface selection:bg-primary selection:text-surface">
+    <header class="bg-[#0f1419]/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-white/5">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <a class="flex items-center gap-2" href="index.html">
+                <img src="img/mfa.png" alt="" class="h-9 w-9 rounded-lg object-contain shrink-0" width="36"
+                    height="36" />
+                <span class="text-2xl font-black text-[#00d4aa] italic uppercase tracking-tighter">Modo Futbol App</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-8">
+                <a class="text-[#8b99a8] font-bold tracking-tight hover:text-[#00d4aa] transition-colors"
+                    href="features.html">Features</a>
+                <a class="text-[#8b99a8] font-bold tracking-tight hover:text-[#00d4aa] transition-colors"
+                    href="index.html#b2b">Empresas</a>
+                <a class="text-[#00d4aa] border-b-2 border-[#00d4aa] pb-1 font-bold tracking-tight"
+                    href="marketing.html">Material</a>
+                <a class="text-[#8b99a8] font-bold tracking-tight hover:text-[#00d4aa] transition-colors"
+                    href="docs/support-es.html">Contacto</a>
+            </nav>
+            <a class="active:scale-95 transition-transform bg-[#00d4aa] text-[#0f1419] px-6 py-2 font-bold rounded-lg hover:brightness-110"
+                href="index.html#download">
+                Comenzar gratis
+            </a>
+        </div>
+    </header>
+
+    <main class="pt-24 overflow-x-hidden">
+        <section class="px-6 py-xl max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h1 class="text-headline-lg text-on-surface mb-4">Material Promocional</h1>
+                <p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    Recursos oficiales para empresas y partners: logos, tipografía, imágenes, códigos QR y documentos
+                    listos para descargar y usar en tus campañas.
+                </p>
+                <div class="h-1 w-24 bg-[#00d4aa] mx-auto mt-6"></div>
+            </div>
+
+            <div class="flex flex-col gap-md">
+                <!-- Logos -->
+                <h2 class="text-headline-md text-on-surface mt-4 mb-1">Logos</h2>
+
+                <article class="glass-card rounded-xl p-lg flex gap-md items-center">
+                    <div class="resource-preview">
+                        <img src="resources/MFA-Logo.png" alt="Logo Modo Futbol App" />
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex flex-wrap items-center gap-2 mb-1">
+                            <h3 class="text-label-bold text-on-surface font-bold">Logo de la aplicación</h3>
+                            <span class="resource-type">Logo</span>
+                        </div>
+                        <p class="text-body-md text-on-surface-variant text-sm mb-3">Ícono oficial de Modo Futbol App. PNG con fondo transparente.</p>
+                        <a class="inline-block text-[#00d4aa] text-label-bold font-bold hover:brightness-110 transition-all"
+                            href="resources/MFA-Logo.png" download="modo-futbol-app-logo.png">Descargar PNG</a>
+                    </div>
+                </article>
+
+                <!-- Tipografía -->
+                <h2 class="text-headline-md text-on-surface mt-6 mb-1">Tipografía</h2>
+
+                <article class="glass-card rounded-xl p-lg flex gap-md items-center">
+                    <div class="resource-preview">
+                        <span class="text-3xl font-semibold text-[#e8ecf1]" style="font-family: Inter, sans-serif;">Aa</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex flex-wrap items-center gap-2 mb-1">
+                            <h3 class="text-label-bold text-on-surface font-bold">Inter</h3>
+                            <span class="resource-type">Tipografía</span>
+                        </div>
+                        <p class="text-body-md text-on-surface-variant text-sm mb-3">Fuente tipográfica oficial de Modo Futbol App. Disponible de forma gratuita en Google Fonts.</p>
+                        <a class="inline-block text-[#00d4aa] text-label-bold font-bold hover:brightness-110 transition-all"
+                            href="https://fonts.google.com/specimen/Inter" target="_blank" rel="noopener noreferrer">Ver en Google Fonts</a>
+                    </div>
+                </article>
+
+                <!-- Badges -->
+                <h2 class="text-headline-md text-on-surface mt-6 mb-1">Badges de descarga</h2>
+
+                <article class="glass-card rounded-xl p-lg flex gap-md items-center">
+                    <div class="resource-preview p-2">
+                        <img src="img/Download_on_the_App_Store_Badge_ESMX_RGB_blk_100217.svg" alt="Badge App Store" />
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex flex-wrap items-center gap-2 mb-1">
+                            <h3 class="text-label-bold text-on-surface font-bold">Badge App Store</h3>
+                            <span class="resource-type">Imagen</span>
+                        </div>
+                        <p class="text-body-md text-on-surface-variant text-sm mb-3">Badge oficial “Descargar en el App Store” en español (LATAM).<br>
+                        El link de la imagen debe apuntar a <a href="https://apps.apple.com/ar/app/modo-futbol-app/id6769594888">https://apps.apple.com/ar/app/modo-futbol-app/id6769594888</a></p>
+                        <a class="inline-block text-[#00d4aa] text-label-bold font-bold hover:brightness-110 transition-all"
+                            href="img/Download_on_the_App_Store_Badge_ESMX_RGB_blk_100217.svg" download="badge-app-store.svg">Descargar SVG</a>
+                    </div>
+                </article>
+
+                <article class="glass-card rounded-xl p-lg flex gap-md items-center">
+                    <div class="resource-preview p-2">
+                        <img src="img/GetItOnGooglePlay_Badge_Web_color_Spanish-LATAM.svg" alt="Badge Google Play" />
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex flex-wrap items-center gap-2 mb-1">
+                            <h3 class="text-label-bold text-on-surface font-bold">Badge Google Play</h3>
+                            <span class="resource-type">Imagen</span>
+                        </div>
+                        <p class="text-body-md text-on-surface-variant text-sm mb-3">Badge oficial “Disponible en Google Play” en español (LATAM).<br>
+                        (En breve!)</p>
+                        <a class="inline-block text-[#00d4aa] text-label-bold font-bold hover:brightness-110 transition-all"
+                            href="img/GetItOnGooglePlay_Badge_Web_color_Spanish-LATAM.svg" download="badge-google-play.svg">Descargar SVG</a>
+                    </div>
+                </article>
+
+                <article class="glass-card rounded-xl p-lg flex gap-md items-center">
+                    <div class="resource-preview p-2">
+                        <img src="img/OpenWeb.svg" alt="Badge versión web" />
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex flex-wrap items-center gap-2 mb-1">
+                            <h3 class="text-label-bold text-on-surface font-bold">Badge versión web</h3>
+                            <span class="resource-type">Imagen</span>
+                        </div>
+                        <p class="text-body-md text-on-surface-variant text-sm mb-3">Badge para promocionar la versión web.<br>
+                            El link de la imagen debe apuntar a <a href="https://mobile.modofutbol.app">https://mobile.modofutbol.app</a></p>
+                        <a class="inline-block text-[#00d4aa] text-label-bold font-bold hover:brightness-110 transition-all"
+                            href="img/OpenWeb.svg" download="badge-version-web.svg">Descargar SVG</a>
+                    </div>
+                </article>
+
+                <!-- Imágenes -->
+                <h2 class="text-headline-md text-on-surface mt-6 mb-1">Imágenes promocionales</h2>
+
+                <article class="glass-card rounded-xl p-lg flex gap-md items-center">
+                    <div class="resource-preview p-1">
+                        <img src="img/4.png" alt="Mockup smartphone" class="rounded-lg object-cover w-full h-full" />
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex flex-wrap items-center gap-2 mb-1">
+                            <h3 class="text-label-bold text-on-surface font-bold">Mockup smartphone</h3>
+                            <span class="resource-type">Imagen</span>
+                        </div>
+                        <p class="text-body-md text-on-surface-variant text-sm mb-3">Captura de la app en dispositivo móvil, ideal para web y redes sociales.</p>
+                        <a class="inline-block text-[#00d4aa] text-label-bold font-bold hover:brightness-110 transition-all"
+                            href="img/4.png" download="modo-futbol-mockup.png">Descargar PNG</a>
+                    </div>
+                </article>
+
+                <!--
+                <article class="glass-card rounded-xl p-lg flex gap-md items-center resource-soon">
+                    <div class="resource-preview">
+                        <span class="text-on-surface-variant text-xs text-center px-2">Pack capturas</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex flex-wrap items-center gap-2 mb-1">
+                            <h3 class="text-label-bold text-on-surface font-bold">Pack de capturas de pantalla</h3>
+                            <span class="resource-type">Imagen</span>
+                            <span class="text-label-sm text-on-surface-variant">Próximamente</span>
+                        </div>
+                        <p class="text-body-md text-on-surface-variant text-sm mb-3">Conjunto de screenshots de las pantallas principales de la app.</p>
+                    </div>
+                </article>
+                -->
+
+                <!-- QR -->
+                <h2 class="text-headline-md text-on-surface mt-6 mb-1">Códigos QR</h2>
+
+                <article class="glass-card rounded-xl p-lg flex gap-md items-center">
+                    <div class="resource-preview">
+                        <img src="resources/mfa-qr.png" alt="QR al inicio de la app" />
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex flex-wrap items-center gap-2 mb-1">
+                            <h3 class="text-label-bold text-on-surface font-bold">QR a la página de la App</h3>
+                            <span class="resource-type">QR</span>
+                        </div>
+                        <p class="text-body-md text-on-surface-variant text-sm mb-3">Este QR lleva a la página principal de la app: <a href="https://modofurbol.app">https://modofurbol.app</a></p>
+                        <a class="inline-block text-[#00d4aa] text-label-bold font-bold hover:brightness-110 transition-all"
+                            href="resources/mfa-qr.png" download="modo-futbol-app-logo.png">Descargar PNG</a>
+                    </div>
+                </article>
+
+
+                <!-- PDFs -->
+                <h2 class="text-headline-md text-on-surface mt-6 mb-1">Documentos PDF</h2>
+
+                <article class="glass-card rounded-xl p-lg flex gap-md items-center">
+                    <div class="resource-preview">
+                        <img src="img/mfa-flyer-1.png" alt="QR al inicio de la app" />
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex flex-wrap items-center gap-2 mb-1">
+                            <h3 class="text-label-bold text-on-surface font-bold">Flyer para grupos</h3>
+                            <span class="resource-type">PDF</span>
+                        </div>
+                        <p class="text-body-md text-on-surface-variant text-sm mb-3">Flyer listo para usar, con el QR de la página y espacio para completar el nombre y el código del grupo.</p>
+                        <a class="inline-block text-[#00d4aa] text-label-bold font-bold hover:brightness-110 transition-all"
+                            href="resources/mfa-flyer-1.pdf" download="modo-futbol-flyer-grupo.pdf">Descargar PDF</a>
+                    </div>
+                </article>
+
+                <!--
+                <article class="glass-card rounded-xl p-lg flex gap-md items-center resource-soon">
+                    <div class="resource-preview">
+                        <span class="text-[#00d4aa] text-2xl font-bold">PDF</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex flex-wrap items-center gap-2 mb-1">
+                            <h3 class="text-label-bold text-on-surface font-bold">Presentación para empresas</h3>
+                            <span class="resource-type">PDF</span>
+                            <span class="text-label-sm text-on-surface-variant">Próximamente</span>
+                        </div>
+                        <p class="text-body-md text-on-surface-variant text-sm mb-3">One-pager con propuesta de valor, funcionalidades y opciones de personalización corporativa.</p>
+                    </div>
+                </article>
+
+                <article class="glass-card rounded-xl p-lg flex gap-md items-center resource-soon">
+                    <div class="resource-preview">
+                        <span class="text-[#00d4aa] text-2xl font-bold">PDF</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex flex-wrap items-center gap-2 mb-1">
+                            <h3 class="text-label-bold text-on-surface font-bold">Guía de grupos corporativos</h3>
+                            <span class="resource-type">PDF</span>
+                            <span class="text-label-sm text-on-surface-variant">Próximamente</span>
+                        </div>
+                        <p class="text-body-md text-on-surface-variant text-sm mb-3">Instrucciones para crear grupos, invitar empleados y administrar la liga interna.</p>
+                    </div>
+                </article>
+                -->
+            </div>
+
+            <div class="text-center mt-xl">
+                <p class="text-body-md text-on-surface-variant mb-4">¿Necesitás material personalizado para tu empresa?</p>
+                <a class="inline-block bg-[#00d4aa] text-[#0f1419] text-label-bold font-bold py-4 px-8 rounded-xl active:scale-95 transition-transform hover:brightness-110"
+                    href="mailto:modo.futbol.app@gmail.com?subject=Material%20promocional%20-%20Modo%20Futbol%20App">
+                    Contactanos
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#0f1419] w-full border-t border-white/5 mt-xl">
+        <div class="max-w-7xl mx-auto px-8 py-12">
+            <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-4 text-sm">
+                <a class="text-[#8b99a8] hover:text-[#00d4aa] transition-colors"
+                    href="docs/termsandconditions-es.html">Términos y condiciones</a>
+                <a class="text-[#8b99a8] hover:text-[#00d4aa] transition-colors" href="docs/privacy-es.html">Política
+                    de privacidad</a>
+                <a class="text-[#8b99a8] hover:text-[#00d4aa] transition-colors" href="docs/support-es.html">Ayuda y
+                    soporte</a>
+                <a class="text-[#8b99a8] hover:text-[#00d4aa] transition-colors"
+                    href="docs/child-safety-es.html">Estándares de seguridad infantil (CSAE)</a>
+            </nav>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-[#8b99a8] text-sm tracking-wide">© 2026 Modo Futbol App. Engineered for the elite.</p>
+                <a class="text-[#8b99a8] hover:text-[#00d4aa] text-sm transition-colors" href="index.html">Volver al
+                    inicio</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
