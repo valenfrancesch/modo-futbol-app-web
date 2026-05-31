@@ -1,0 +1,17 @@
+# app-ads.txt — Modo Futbol / Google AdMob
+#
+# Publicar en la raíz del sitio del desarrollador (NO bajo /docs/):
+#   https://modofutbol.app/app-ads.txt
+#
+# Publisher ID: AdMob → Configuración → Información de la cuenta → ID de editor
+# (extraído de ca-app-pub-5515598724583772 en env/.env.release)
+#
+# Verificar en AdMob → Apps → app-ads.txt, o en:
+#   https://adstxt.guru/app-ads-txt/modofutbol.app/
+#
+# Si usás otro dominio en Play Console / App Store Connect (p. ej. mobile.modofutbol.app),
+# reemplazá la URL de publicación arriba y copiá este archivo a la raíz de ese host.
+#
+# Línea requerida (sin comentarios al publicar; Google no parsea líneas que empiezan con #):
+
+google.com, pub-5515598724583772, DIRECT, f08c47fec0942fa0
